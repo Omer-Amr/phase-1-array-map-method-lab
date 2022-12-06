@@ -11,6 +11,17 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+
+
 const titleCased = () => {
-  return tutorials
+  let splitArray = tutorials.map ( word => word.split(' ') )
+
+  function toBig(words) {
+    let bigArr = []
+    for(const element of words){
+      bigArr.push (element.charAt(0).toUpperCase()+element.slice(1))
+    }
+    return bigArr.join(' ');
+  }
+  return splitArray.map (word => toBig (word) )
 }
